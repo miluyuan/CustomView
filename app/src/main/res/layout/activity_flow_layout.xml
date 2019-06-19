@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.customview.layout_2.FlowLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ff00ff"
+    tools:context=".layout_2.FlowLayoutActivity">
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="Welcome"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="IT工程师"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="我真是可以的"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="你觉得呢"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="I thick i can"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="不要只知道挣钱"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="努力ing"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="你觉得呢"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="I thick i can"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="Welcome"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="IT工程师"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="我真是可以的"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="努力ing"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="你觉得呢"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="I think i can"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="你觉得呢"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="I thick i can"
+        android:textColor="#43BBE7"/>
+
+    <TextView
+        style="@style/text_flag_01"
+        android:text="不要只知道挣钱"
+        android:textColor="#43BBE7"/>
+
+
+</com.example.customview.layout_2.FlowLayout>
