@@ -9,8 +9,10 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.view.animation.LinearInterpolator
+
 
 /**
  *
@@ -20,16 +22,23 @@ import android.view.animation.LinearInterpolator
 class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
     : View(context, attrs, defStyleAttr) {
 
-    private var outRadius = 0f
+    private var bigRadius = 0f
     private var midRadius = 0f
-    private var innerRadius = 0f
+    private var smallRadius = 0f
     private var cx = 0f
     private var cy = 0f
     private val paint = Paint()
     private var valueAnimator: ValueAnimator
+    private lateinit var bigRectF: RectF
+    private lateinit var midTopRect: RectF
+    private lateinit var midBottomRect: RectF
+    private lateinit var smallTopRectF: RectF
+    private lateinit var smallBottomRectF: RectF
+    private var startDegree = 0f
+    private var degree = 0f
 
     init {
-        paint.style = Paint.Style.FILL_AND_STROKE
+        paint.style = Paint.Style.FILL
         paint.isAntiAlias = true
 
         valueAnimator = ObjectAnimator.ofFloat(360f).apply {
@@ -41,13 +50,39 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         }
         valueAnimator.addUpdateListener {
             val value = it.animatedValue as Float
-            rotation = value
+            degree = startDegree + value
+            invalidate()
         }
-
     }
 
-    lateinit var topRect: RectF
-    lateinit var bottomRect: RectF
+    private val cenPoint = Point()
+    private val firstPoint = Point()
+    private val secondPoint = Point()
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                stop()
+                firstPoint.x = event.x
+                firstPoint.y = event.y
+//                println("down")
+                return true
+            }
+            MotionEvent.ACTION_MOVE -> {
+                secondPoint.x = event.x
+                secondPoint.y = event.y
+                val degre = getDegree(cenPoint, firstPoint, secondPoint).toFloat()
+                println("move，$firstPoint")
+                degree += degre
+                startDegree = degree
+                invalidate()
+
+                firstPoint.set(secondPoint)
+            }
+        }
+        return super.onTouchEvent(event)
+    }
+
     @SuppressLint("DrawAllocation")
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -55,49 +90,94 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         val measureHeight = MeasureSpec.getSize(heightMeasureSpec)
         cx = measureWidth / 2.toFloat()
         cy = measureHeight / 2.toFloat()
-        outRadius = Math.min(measureHeight, measureWidth) / 2.toFloat()
-        midRadius = outRadius / 2
-        innerRadius = midRadius / 3
+        cenPoint.x = cx
+        cenPoint.y = cy
+        bigRadius = Math.min(measureHeight, measureWidth) / 2.toFloat()
+        midRadius = bigRadius / 2
+        smallRadius = midRadius / 3
 
-        topRect = RectF(cx - midRadius, cy - outRadius, cx + midRadius, cy)
-        bottomRect = RectF(cx - midRadius, cy, cx + midRadius, cy + outRadius)
+        bigRectF = RectF(cx - bigRadius, cy - bigRadius, cx + bigRadius, cy + bigRadius)
+
+        smallTopRectF = RectF(cx - smallRadius, cy - smallRadius * 4, cx + smallRadius, cy - smallRadius * 2)
+        smallBottomRectF = RectF(cx - smallRadius, cy + smallRadius * 2, cx + smallRadius, cy + smallRadius * 4)
+
+        midTopRect = RectF(cx - midRadius, cy - bigRadius, cx + midRadius, cy)
+        midBottomRect = RectF(cx - midRadius, cy, cx + midRadius, cy + bigRadius)
 
         valueAnimator.start()
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        drawOut(canvas)
+        canvas.rotate(degree, cx, cy)
+        drawBig(canvas)
         drawMid(canvas)
-        drawInner(canvas)
-//        canvas.rotate(degree, cx, cy)
+        drawSmall(canvas)
     }
 
-    private fun drawOut(canvas: Canvas) {
-
+    private fun drawBig(canvas: Canvas) {
+        //右半圆黑色
         paint.color = Color.BLACK
-        val rect = RectF(cx - outRadius, cy - outRadius, cx + outRadius, cy + outRadius)
-        canvas.drawArc(rect, -90f, 180f, false, paint)
+        canvas.drawArc(bigRectF, -90f, 180f, false, paint)
+        //左半圆白色
         paint.color = Color.WHITE
-        canvas.drawArc(rect, 90f, 180f, false, paint)
+        canvas.drawArc(bigRectF, 90f, 180f, false, paint)
     }
 
     private fun drawMid(canvas: Canvas) {
+        //原本只画半圆就可以了，但paint抗锯齿且旋转动画后半圆直径位置会有线
+        //画两个黑白圆
         paint.color = Color.WHITE
-        canvas.drawArc(topRect, -90f, 360f, false, paint)
+        canvas.drawArc(midTopRect, -90f, 360f, false, paint)
         paint.color = Color.BLACK
-        canvas.drawArc(bottomRect, 90f, 360f, false, paint)
+        canvas.drawArc(midBottomRect, 90f, 360f, false, paint)
     }
 
-    private fun drawInner(canvas: Canvas) {
+    private fun drawSmall(canvas: Canvas) {
         paint.color = Color.BLACK
-        val innerCyTop = cy - midRadius
-        canvas.drawCircle(cx, innerCyTop, innerRadius, paint)
-
+        canvas.drawArc(smallTopRectF, 0f, 360f, false, paint)
         paint.color = Color.WHITE
-        val innerCyBottom = cy + midRadius
-        canvas.drawCircle(cx, innerCyBottom, innerRadius, paint)
+        canvas.drawArc(smallBottomRectF, 0f, 360f, false, paint)
     }
 
+    public fun start() {
+        valueAnimator.start()
+    }
 
+    public fun stop() {
+        valueAnimator.cancel()
+        startDegree = degree
+    }
+
+    fun getDegree(cen: Point, first: Point, second: Point): Double {
+        val x1 = first.x - cen.x.toDouble()
+        val y1 = first.y - cen.y.toDouble()
+        val x2 = second.x - cen.x.toDouble()
+        val y2 = second.y - cen.y.toDouble()
+
+        val atan1 = quadrantAngle(x1, y1)
+        val atan2 = quadrantAngle(x2, y2)
+
+        println("atan1============$atan1")
+        println("atan2============$atan2")
+        return (atan2 - atan1) * 360 / (Math.PI * 2)
+    }
+
+    /**
+     * 象限角度换算
+     */
+    private fun quadrantAngle(x: Double, y: Double): Double {
+        val angle = Math.atan(y / x)
+        //角度在0到2π之间，需区分象限
+        return if (x > 0 && y > 0) {
+            angle
+        } else if (x > 0 && y < 0) {
+            angle + 2 * Math.PI
+        } else if (x < 0 && y > 0) {
+            angle + Math.PI
+        } else {
+            // (x < 0 && y < 0)
+            angle + Math.PI
+        }
+    }
 }
