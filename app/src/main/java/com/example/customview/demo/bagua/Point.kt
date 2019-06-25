@@ -7,6 +7,7 @@ package com.example.customview.demo.bagua
 class Point {
     var x: Float = 0.toFloat()
     var y: Float = 0.toFloat()
+    var time:Long = 0L
 
     constructor() {}
 
@@ -18,6 +19,7 @@ class Point {
     constructor(src: Point) {
         this.x = src.x
         this.y = src.y
+        this.time = src.time
     }
 
     /**

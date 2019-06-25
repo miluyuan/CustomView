@@ -36,21 +36,25 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     private lateinit var smallBottomRectF: RectF
     private var startDegree = 0f
     private var degree = 0f
+    //转一周用时，单位秒/转
+    private var cycleTime = 10L
+    private var list = ArrayList<Point>(10)
+    //正负系数(正:顺时针转)
+    private var factor = 1
 
     init {
         paint.style = Paint.Style.FILL
         paint.isAntiAlias = true
 
         valueAnimator = ObjectAnimator.ofFloat(360f).apply {
-            duration = 10 * 1000
+            duration = cycleTime * 1000
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.RESTART
             interpolator = LinearInterpolator()
-
         }
         valueAnimator.addUpdateListener {
             val value = it.animatedValue as Float
-            degree = startDegree + value
+            degree = startDegree + value * factor
             invalidate()
         }
     }
@@ -65,22 +69,55 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
                 stop()
                 firstPoint.x = event.x
                 firstPoint.y = event.y
+                firstPoint.time = System.currentTimeMillis()
+                list.clear()
+                add2List(firstPoint)
 //                println("down")
                 return true
             }
             MotionEvent.ACTION_MOVE -> {
                 secondPoint.x = event.x
                 secondPoint.y = event.y
+                secondPoint.time = System.currentTimeMillis()
+                add2List(secondPoint)
                 val degre = getDegree(cenPoint, firstPoint, secondPoint).toFloat()
-                println("move，$firstPoint")
+                println("move，$secondPoint")
                 degree += degre
-                startDegree = degree
+                startDegree = degree % 360
                 invalidate()
 
+//                first = second
                 firstPoint.set(secondPoint)
+            }
+            MotionEvent.ACTION_UP -> {
+                if (list.size < 6) {
+                    return super.onTouchEvent(event)
+                }
+                firstPoint.set(list.first())
+                secondPoint.set(list.last())
+                val degre = getDegree(cenPoint, firstPoint, secondPoint).toFloat()
+                cycleTime = ((secondPoint.time - firstPoint.time) * 360 / degre).toLong()
+                if (cycleTime < 0) {
+                    factor = -1
+                    cycleTime = -cycleTime
+                } else {
+                    factor = 1
+                }
+                valueAnimator.duration = cycleTime
+                start()
+                println("cycleTime=$cycleTime")
             }
         }
         return super.onTouchEvent(event)
+    }
+
+    private fun add2List(point: Point) {
+
+        if (list.size == 10) {
+            list.removeAt(0)
+        }
+        val p = Point(point)
+        list.add(p)
     }
 
     @SuppressLint("DrawAllocation")
@@ -146,7 +183,7 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     public fun stop() {
         valueAnimator.cancel()
-        startDegree = degree
+        startDegree = degree % 360
     }
 
     fun getDegree(cen: Point, first: Point, second: Point): Double {
@@ -158,8 +195,8 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         val atan1 = quadrantAngle(x1, y1)
         val atan2 = quadrantAngle(x2, y2)
 
-        println("atan1============$atan1")
-        println("atan2============$atan2")
+//        println("atan1============$atan1")
+//        println("atan2============$atan2")
         return (atan2 - atan1) * 360 / (Math.PI * 2)
     }
 

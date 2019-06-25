@@ -7,14 +7,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".demo.DemoActivity">
+
     <Button
         android:id="@+id/btn1"
-        android:text="雷达图"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="雷达图"/>
+
     <Button
         android:id="@+id/btn2"
-        android:text="八卦图"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="八卦图"/>
+
 </LinearLayout>
