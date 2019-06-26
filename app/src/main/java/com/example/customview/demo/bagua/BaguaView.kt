@@ -1,6 +1,5 @@
 package com.example.customview.demo.bagua
 
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,9 +12,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.LinearInterpolator
 
-
 /**
- *
+ * 八卦图
  * @author wzw
  * @date 2019/6/18 16:09
  */
@@ -46,10 +44,10 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         paint.style = Paint.Style.FILL
         paint.isAntiAlias = true
 
-        valueAnimator = ObjectAnimator.ofFloat(360f).apply {
+        valueAnimator = ValueAnimator.ofFloat(360f).apply {
             duration = cycleTime * 1000
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.RESTART
+            repeatCount = ValueAnimator.INFINITE
+            repeatMode = ValueAnimator.RESTART
             interpolator = LinearInterpolator()
         }
         valueAnimator.addUpdateListener {

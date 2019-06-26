@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <Button
         android:id="@+id/btn301"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="一、Xml Animation"/>
+
     <Button
         android:id="@+id/btn302"
         android:layout_width="match_parent"
@@ -23,11 +25,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Demo"/>
+
     <Button
         android:id="@+id/btn101"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="视图一：onMeasure/onLayout"/>
+
     <Button
         android:id="@+id/btn102"
         android:layout_width="match_parent"
@@ -39,7 +43,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="绘图篇"/>
-
 
 
 </LinearLayout>

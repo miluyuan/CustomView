@@ -3,6 +3,7 @@ package com.example.customview
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Paint
+import android.util.TypedValue
 
 /**
  *
@@ -21,5 +22,9 @@ object PaintUtil {
     fun dip2Px(context: Context, dip: Int): Int {
         val density = context.resources.displayMetrics.density
         return (dip.toFloat() * density + 0.5f).toInt()
+    }
+
+    fun sp2Px(context: Context, sp: Int){
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp.toFloat(), context.resources.displayMetrics)
     }
 }

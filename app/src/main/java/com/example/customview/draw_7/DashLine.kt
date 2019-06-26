@@ -1,6 +1,6 @@
 package com.example.customview.draw_7
 
-import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.view.View
@@ -17,7 +17,7 @@ class DashLine(context: Context) : View(context) {
     val realWidth = 20f
     val gapWith = 10f
     var phase = 0f
-    val animator = ObjectAnimator.ofFloat(realWidth + gapWith)
+    val animator = ValueAnimator.ofFloat(realWidth + gapWith)
 
     init {
         paint.pathEffect = DashPathEffect(floatArrayOf(realWidth, gapWith), phase)
@@ -27,7 +27,7 @@ class DashLine(context: Context) : View(context) {
         path.lineTo(1000f, 100f)
         paint.style = Paint.Style.STROKE
 
-        animator.repeatCount = ObjectAnimator.INFINITE
+        animator.repeatCount = ValueAnimator.INFINITE
         animator.duration = 1000
         animator.interpolator = LinearInterpolator()
         animator.addUpdateListener {

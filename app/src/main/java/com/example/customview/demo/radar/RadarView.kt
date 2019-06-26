@@ -1,6 +1,5 @@
 package com.example.customview.demo.radar
 
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
@@ -33,7 +32,7 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     private var radarPaint = Paint()
 
     init {
-        val animator = ObjectAnimator.ofInt(0, 360 * 2)
+        val animator = ValueAnimator.ofInt(0, 360 * 2)
         animator.repeatCount = ValueAnimator.INFINITE
         animator.repeatMode = ValueAnimator.RESTART
         animator.interpolator = LinearInterpolator()
