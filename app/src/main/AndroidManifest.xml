@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".animate_2.XmlInterpolatorActivity">
+        </activity>
+        <activity android:name=".DrawActivity">
+        </activity>
+        <activity android:name=".animate_1.XmlAnimationActivity">
+        </activity>
         <activity android:name=".demo.DemoActivity">
         </activity>
         <activity android:name=".demo.bagua.BaguaActivity">

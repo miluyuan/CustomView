@@ -6,40 +6,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-    <Button
-        android:id="@+id/btn301"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="一、Xml Animation"/>
-    <Button
-        android:id="@+id/btn302"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="二、Xml Animation Interpolator"/>
-
-    <Button
-        android:id="@+id/btn201"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Demo"/>
-    <Button
-        android:id="@+id/btn101"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="视图一：onMeasure/onLayout"/>
-    <Button
-        android:id="@+id/btn102"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="视图二：FlowLayout"/>
+    tools:context=".DrawActivity">
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="绘图篇"/>
+        android:text="一、概述"/>
 
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="二、路径"/>
 
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="二、文字"/>
 
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="三、区域（Range）"/>
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="四、canvas变换与操作"/>
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="五、drawText"/>
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="六、Path贝塞尔曲线、手势轨迹、水波纹"/>
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="七、Paint的其他方法"/>
 </LinearLayout>
