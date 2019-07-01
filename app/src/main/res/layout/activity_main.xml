@@ -12,13 +12,19 @@
         android:id="@+id/btn301"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="一、Xml Animation"/>
+        android:text="一、Xml 动画"/>
 
     <Button
         android:id="@+id/btn302"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="二、Xml Animation Interpolator"/>
+        android:text="二、Xml 动画插值器"/>
+
+    <Button
+        android:id="@+id/btn305"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="五、属性动画插值器"/>
 
     <Button
         android:id="@+id/btn201"

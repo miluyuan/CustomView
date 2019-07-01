@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".animate_5_interpolator.CustomInterpolatorActivity">
+        </activity>
         <activity android:name=".animate_2.XmlInterpolatorActivity">
         </activity>
         <activity android:name=".DrawActivity">

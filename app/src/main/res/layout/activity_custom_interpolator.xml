@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".animate_5_interpolator.CustomInterpolatorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="匀加速"/>
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:text="取消动画"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnReverse"
+            android:layout_width="wrap_content"
+            android:text="倒序动画"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnColorAnim"
+            android:layout_width="wrap_content"
+            android:text="背景色渐变"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_purple"
+        android:text="Hello"/>
+
+     <TextView
+        android:id="@+id/tvBg"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/holo_purple"
+        android:text="Hello"/>
+
+
+</LinearLayout>

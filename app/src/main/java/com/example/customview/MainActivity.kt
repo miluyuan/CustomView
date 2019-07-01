@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.customview.animate_1.XmlAnimationActivity
 import com.example.customview.animate_2.XmlInterpolatorActivity
+import com.example.customview.animate_5_interpolator.CustomInterpolatorActivity
 import com.example.customview.demo.DemoActivity
 import com.example.customview.layout_1.MeasureLayoutActivity
 import com.example.customview.layout_2.FlowLayoutActivity
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         btn301.setOnClickListener { startActivity(Intent(this, XmlAnimationActivity::class.java)) }
         btn302.setOnClickListener { startActivity(Intent(this, XmlInterpolatorActivity::class.java)) }
+        btn305.setOnClickListener { startActivity(Intent(this, CustomInterpolatorActivity::class.java)) }
 
         btn201.setOnClickListener { startActivity(Intent(this, DemoActivity::class.java)) }
 
