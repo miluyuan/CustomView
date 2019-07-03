@@ -27,6 +27,18 @@
         android:text="五、属性动画插值器"/>
 
     <Button
+        android:id="@+id/btn306"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="六、ValueAnimator高级用法(一)"/>
+
+    <Button
+        android:id="@+id/btn308"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="八、PropertyValuesHolder与Keyframe"/>
+
+    <Button
         android:id="@+id/btn201"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

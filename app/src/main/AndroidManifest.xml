@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".animate_6.ValueAnimator1Activity">
+        </activity>
+        <activity android:name=".animate_8.PropertyValuesHolderActivity">
+        </activity>
         <activity android:name=".animate_5_interpolator.CustomInterpolatorActivity">
         </activity>
         <activity android:name=".animate_2.XmlInterpolatorActivity">

@@ -6,6 +6,7 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.animation.LinearInterpolator
+import android.widget.Toast
 import com.example.customview.R
 import kotlinx.android.synthetic.main.activity_custom_interpolator.*
 
@@ -25,6 +26,9 @@ class CustomInterpolatorActivity : AppCompatActivity() {
             interpolator = GravityAccelerationInterpolator()
 
             duration = 1 * 1000
+            repeatMode = ValueAnimator.REVERSE
+            //repeatCount从0开始，0即一次，1即2次，
+            repeatCount = 1
         }
 
         animator.addUpdateListener {
@@ -32,7 +36,9 @@ class CustomInterpolatorActivity : AppCompatActivity() {
                 top = tv.top
             }
             val value = it.animatedValue as Int
-            tv.layout(tv.left, top + value, tv.right, top + value + tv.height)
+            //用layout()调用setText又会回到原始位置，translationY则不会
+//            tv.layout(tv.left, top + value, tv.right, top + value + tv.height)
+            tv.translationY = value.toFloat()
             println(value)
         }
 
@@ -52,6 +58,10 @@ class CustomInterpolatorActivity : AppCompatActivity() {
         }
 
         btnColorAnim.setOnClickListener { colorAnim() }
+
+        tv.setOnClickListener {
+            Toast.makeText(this, tv.text, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun colorAnim() {
