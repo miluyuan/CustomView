@@ -8,6 +8,7 @@ import com.example.customview.animate_2.XmlInterpolatorActivity
 import com.example.customview.animate_5_interpolator.CustomInterpolatorActivity
 import com.example.customview.animate_6.ValueAnimator1Activity
 import com.example.customview.animate_8.PropertyValuesHolderActivity
+import com.example.customview.animate_9.AnimatorSetActivity
 import com.example.customview.demo.DemoActivity
 import com.example.customview.layout_1.MeasureLayoutActivity
 import com.example.customview.layout_2.FlowLayoutActivity
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         btn305.setOnClickListener { startActivity(Intent(this, CustomInterpolatorActivity::class.java)) }
         btn306.setOnClickListener { startActivity(Intent(this, ValueAnimator1Activity::class.java)) }
         btn308.setOnClickListener { startActivity(Intent(this, PropertyValuesHolderActivity::class.java)) }
+        btn309.setOnClickListener { startActivity(Intent(this, AnimatorSetActivity::class.java)) }
 
         btn201.setOnClickListener { startActivity(Intent(this, DemoActivity::class.java)) }
 

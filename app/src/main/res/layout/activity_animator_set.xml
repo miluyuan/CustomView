@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".animate_9.AnimatorSetActivity">
+
+
+    <Button
+        android:id="@+id/btnStart1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="playSequentially"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnStart2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btnStart1"
+        android:text="playTogether"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnStart3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btnStart2"
+        android:text="既有顺序也有同时执行"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="24dp"
+        android:background="@color/colorAccent"
+        android:padding="2dp"
+        android:text="TextView_1"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/tv1"
+        android:background="@color/colorPrimary"
+        android:padding="2dp"
+        android:text="TextView_2"/>
+
+</RelativeLayout>

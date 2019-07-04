@@ -39,6 +39,12 @@
         android:text="八、PropertyValuesHolder与Keyframe"/>
 
     <Button
+        android:id="@+id/btn309"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="九、联合动画"/>
+
+    <Button
         android:id="@+id/btn201"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
