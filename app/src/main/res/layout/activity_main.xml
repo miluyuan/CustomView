@@ -45,6 +45,12 @@
         android:text="九、联合动画"/>
 
     <Button
+        android:id="@+id/btn310"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="十、联合动画Demo"/>
+
+    <Button
         android:id="@+id/btn201"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
