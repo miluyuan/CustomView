@@ -20,6 +20,28 @@
         android:layout_toRightOf="@+id/btnStart"
         android:text="cancel"/>
 
+    <Button
+        android:id="@+id/btnReverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btnCancel"
+        android:text="Reverse"/>
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnReverse"
+        android:text="Pause"/>
+
+    <Button
+        android:id="@+id/btnResume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnPause"
+        android:layout_toRightOf="@id/btnPause"
+        android:text="resume"/>
+
     <TextView
         android:id="@+id/tvEast"
         android:layout_width="48dp"

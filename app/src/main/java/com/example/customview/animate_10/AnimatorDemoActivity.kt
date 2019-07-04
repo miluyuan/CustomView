@@ -50,8 +50,13 @@ class AnimatorDemoActivity : AppCompatActivity() {
             v.setOnClickListener { Toast.makeText(this, v.text, Toast.LENGTH_SHORT).show() }
         }
 
+        //cancel()会回调AnimatorListener的cancel和end
         btnCancel.setOnClickListener { set.cancel() }
-        btnStart.setOnClickListener { set.reverse() }
+        //reverse不会回调AnimatorListener
+        btnReverse.setOnClickListener { set.reverse() }
+        btnStart.setOnClickListener { set.start() }
+        btnPause.setOnClickListener { set.pause() }
+        btnResume.setOnClickListener { set.resume() }
 
         set.addListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
