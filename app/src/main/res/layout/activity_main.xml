@@ -51,6 +51,12 @@
         android:text="十、联合动画Demo"/>
 
     <Button
+        android:id="@+id/btn30X"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X、View实现链式调用"/>
+
+    <Button
         android:id="@+id/btn201"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

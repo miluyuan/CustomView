@@ -31,7 +31,9 @@ public class Test {
 //        f.setMaximumFractionDigits(2);
 //        System.out.println(f.format(number));
 
-        doubleFormat();
+//        doubleFormat();
+        System.out.println(Integer.toBinaryString(3));
+
     }
 //https://blog.csdn.net/qq_36502826/article/details/86673906
     //https://blog.csdn.net/bailu666666/article/details/79829902

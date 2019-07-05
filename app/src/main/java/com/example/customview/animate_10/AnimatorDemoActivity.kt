@@ -3,6 +3,8 @@ package com.example.customview.animate_10
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.annotation.TargetApi
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -44,6 +46,7 @@ class AnimatorDemoActivity : AppCompatActivity() {
         initListener()
     }
 
+    @TargetApi(Build.VERSION_CODES.O)
     private fun initListener() {
         for (view in viewList) {
             val v = view as TextView
