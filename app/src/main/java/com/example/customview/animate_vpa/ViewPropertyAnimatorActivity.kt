@@ -24,6 +24,11 @@ class ViewPropertyAnimatorActivity : AppCompatActivity() {
                     .alpha(0.5f)
                     .rotation(360f)
                     .translationX(400f)
+                    //类似animatorSet.playSequentially
+                    .withEndAction {
+                        //前面动画执行后调用，duration没设置时使用之前设置的值
+                        viewPropertyAnimator.translationX(0f).duration = 1000
+                    }
                     .translationY(400f)
         }
 

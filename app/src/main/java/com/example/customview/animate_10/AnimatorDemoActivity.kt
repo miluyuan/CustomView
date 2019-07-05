@@ -40,7 +40,10 @@ class AnimatorDemoActivity : AppCompatActivity() {
             addAlphas()
 
             set.duration = 1000
+            //同时执行
             set.playTogether(list as Collection<Animator>?)
+            //依次执行
+//            set.playSequentially(list as List<Animator>?)
             set.start()
         }
         initListener()
