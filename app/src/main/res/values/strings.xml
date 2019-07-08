@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CustomView</string>
     <string name="title_activity_draw1">Draw1Activity</string>
+    <string name="long_text">自以为的自定义横屏LinearLayout的TextView显示不全，此法不同，算是失败了。</string>
 </resources>

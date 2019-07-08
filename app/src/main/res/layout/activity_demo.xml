@@ -32,4 +32,10 @@
         android:layout_height="wrap_content"
         android:text="竖向TextView"/>
 
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LinearLayout横屏"/>
+
 </LinearLayout>

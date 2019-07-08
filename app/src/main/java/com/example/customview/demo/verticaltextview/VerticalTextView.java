@@ -13,7 +13,7 @@ import android.view.Gravity;
 
 /**
  * 文字横屏
- *
+ * <p>
  * from:
  * https://github.com/xuningjack/verticaltextview/blob/master/src/com/example/android_verticaltextview/VerticalTextView.java
  * 竖向TextView控件
