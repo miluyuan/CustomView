@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 
 /**
+ * 古文竖向
  * from https://blog.csdn.net/zhao0829wang/article/details/46775997
  */
 public class TextViewVertical extends View {

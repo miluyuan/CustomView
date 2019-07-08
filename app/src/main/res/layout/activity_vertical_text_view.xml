@@ -4,20 +4,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".demo.verticaltextview.VerticalTextViewActivity">
 
-    <TextView
-        android:text="支持多行，对字符支持好 对于数字和字母支持不好。无法显示多行竖直显示."
-        android:gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:textSize="10sp"
-        android:textColor="@android:color/black"
-        android:layout_height="200dp"
-        android:ems="2"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:ems="2"
+            android:gravity="center_horizontal"
+            android:text="支持多行，对字符支持好 对于数字和字母支持不好。无法显示多行竖直显示."
+            android:textColor="@android:color/black"
+            android:textSize="10sp"/>
 
-    <com.example.customview.demo.verticaltextview.TextViewVertical
-        android:id="@+id/tvv"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"/>
-</LinearLayout>
+        <com.example.customview.demo.verticaltextview.TextViewVertical
+            android:id="@+id/tvv"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <com.example.customview.demo.verticaltextview.VerticalTextView
+            android:id="@+id/timeFileterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="支持多行，支持多行，对字支持多行，对字符支持好 对于数字和字母支持不好。无法显示多行竖直显示."/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_compare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="支持多行，支持多行，对字支持多行，对字符支持好 对于数字和字母支持不好。无法显示多行竖直显示."/>
+
+    </LinearLayout>
+   </LinearLayout>
