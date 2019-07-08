@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".demo.verticaltextview.VerticalTextViewActivity">
+
+    <TextView
+        android:text="支持多行，对字符支持好 对于数字和字母支持不好。无法显示多行竖直显示."
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:textSize="10sp"
+        android:textColor="@android:color/black"
+        android:layout_height="200dp"
+        android:ems="2"/>
+
+    <com.example.customview.demo.verticaltextview.TextViewVertical
+        android:id="@+id/tvv"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"/>
+</LinearLayout>

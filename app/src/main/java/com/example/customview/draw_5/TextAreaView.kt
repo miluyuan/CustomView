@@ -22,17 +22,17 @@ class TextAreaView(context: Context) : View(context) {
         paint.style = Paint.Style.FILL
         paint.isAntiAlias = true
         paint.textSize = 160f
-        val text = "lHello google!"
+        val text = "中文测试google lHello !"
         canvas?.drawText(text, baseLineX, baseLineY, paint)
 
 
         //最小矩形
         paint.color = Color.RED
-        val rect = Rect()
-        paint.getTextBounds(text, 0, text.length, rect)
+        val minRect = Rect()
+        paint.getTextBounds(text, 0, text.length, minRect)
         paint.style = Paint.Style.STROKE
-        val rect2 = RectF(rect.left + baseLineX, rect.top + baseLineY,
-                rect.right + baseLineX, rect.bottom + baseLineY)
+        val rect2 = RectF(minRect.left + baseLineX, minRect.top + baseLineY,
+                minRect.right + baseLineX, minRect.bottom + baseLineY)
         canvas?.drawRect(rect2, paint)
 
 
