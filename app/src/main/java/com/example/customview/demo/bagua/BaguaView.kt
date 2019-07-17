@@ -14,6 +14,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.LinearInterpolator
 import kotlin.math.atan
+import kotlin.math.min
 
 /**
  * 八卦图
@@ -56,7 +57,7 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         valueAnimator.addUpdateListener {
             val value = it.animatedValue as Float
             degree = startDegree + value * factor
-            println("####$degree")
+//            println("####$degree")
             invalidate()
         }
     }
@@ -100,6 +101,7 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
                 firstPoint.set(list.first())
                 secondPoint.set(list.last())
                 val degre = getDegree(cenPoint, firstPoint, secondPoint).toFloat()
+                println("action_up: $degre")
                 if (degre != 0f) {
                     cycleTime = ((secondPoint.time - firstPoint.time) * 360 / degre).toLong()
                     if (cycleTime < 0) {
@@ -137,7 +139,7 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         cy = measureHeight / 2.toFloat()
         cenPoint.x = cx
         cenPoint.y = cy
-        bigRadius = Math.min(measureHeight, measureWidth) / 2.toFloat()
+        bigRadius = min(measureHeight, measureWidth) / 2.toFloat()
         midRadius = bigRadius / 2
         smallRadius = midRadius / 3
 
@@ -158,7 +160,7 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         drawBig(canvas)
         drawMid(canvas)
         drawSmall(canvas)
-        println("onDraw")
+//        println("onDraw")
     }
 
     private fun drawBig(canvas: Canvas) {
@@ -195,7 +197,7 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         startDegree = degree % 360
     }
 
-    fun getDegree(cen: Point, first: Point, second: Point): Double {
+    private fun getDegree(cen: Point, first: Point, second: Point): Double {
         if (first.x == second.x && first.y == second.y) {
             return 0.0
         }
@@ -209,11 +211,19 @@ class BaguaView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
         println("atan1,2============($atan1, $atan2)")
 //        println("atan2============$atan2")
-        return Math.toDegrees((atan2 - atan1))
+        var toDegrees = Math.toDegrees((atan2 - atan1))
+        //解决x1>0,x2>0, y1*y2<0时会朝相反方向快速转动
+        if (toDegrees > 180) {
+            toDegrees -= 360.0
+        } else if (toDegrees < -180) {
+            toDegrees += 360
+        }
+        return toDegrees
     }
 
     /**
      * 象限角度换算
+     * 与x轴正方向的顺时针夹角
      */
     private fun quadrantAngle(x: Double, y: Double): Double {
         val angle = atan(y / x)

@@ -32,9 +32,11 @@ public class Test {
 //        System.out.println(f.format(number));
 
 //        doubleFormat();
-        System.out.println(Integer.toBinaryString(3));
-
+//        System.out.println(Integer.toBinaryString(3));
+        System.out.println(Math.toDegrees(0.663978750126234));
     }
+
+
 //https://blog.csdn.net/qq_36502826/article/details/86673906
     //https://blog.csdn.net/bailu666666/article/details/79829902
     public static String double2Str(Double d) {
