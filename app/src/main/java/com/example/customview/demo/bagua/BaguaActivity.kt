@@ -1,5 +1,6 @@
 package com.example.customview.demo.bagua
 
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.customview.R
@@ -12,4 +13,19 @@ class BaguaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bagua)
         start.setOnClickListener { bagua.start() }
     }
+
+    override fun onStop() {
+        super.onStop()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            bagua.pause()
+        } else {
+            bagua.cancel()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bagua.cancel()
+    }
+
 }
