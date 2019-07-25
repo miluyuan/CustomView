@@ -32,13 +32,26 @@ class DrawTextView(context: Context) : View(context) {
         paint.textScaleX = 2f
     }
 
-    private val text = "生成方式的区别在于，依据生成方向排版的文字！"
+    private var text = "生成方式的区别在于，依据生成方向排版的文字！"
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+//        paint.textAlign = Paint.Align.LEFT
+        //LEFT:文字的左侧与x对齐,默认LEFT，CENTER：文字的中间与x对齐，RIGHT：文字的右侧与x对齐
+        text = "textAlign-default"
+        canvas.drawText(text, width/2f, 50f, paint)
+
+        text = "textAlign-LEFT"
         paint.textAlign = Paint.Align.LEFT
-        //LEFT:文字的左侧与x对其，CENTER：文字的中间与x对其，RIGHT：文字的右侧与x对其
-        canvas?.drawText(text, 200f, 100f, paint)
+        canvas.drawText(text, width/2f, 100f, paint)
+
+        text = "textAlign-CENTER"
+        paint.textAlign = Paint.Align.CENTER
+        canvas.drawText(text, width/2f, 200f, paint)
+
+        text = "textAlign-RIGHT"
+        paint.textAlign = Paint.Align.RIGHT
+        canvas.drawText(text, width/2f, 300f, paint)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
