@@ -23,7 +23,7 @@ class FourLineView(context: Context) : View(context) {
         paint.style = Paint.Style.FILL
         paint.isAntiAlias = true
         paint.textSize = 160f
-        canvas?.drawText("lHello google!", baseLineX, baseLineY, paint)
+        canvas?.drawText("我爱AI google!", baseLineX, baseLineY, paint)
 
 
 

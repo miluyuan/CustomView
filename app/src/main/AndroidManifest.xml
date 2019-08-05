@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".demo.iconview.IconViewActivity">
+        </activity>
+        <activity android:name=".AnimateActivity">
+        </activity>
         <activity android:name=".demo.landscapelinearlayout.LandscapeLinearLayoutActivity">
         </activity>
         <activity android:name=".demo.verticaltextview.VerticalTextViewActivity">

@@ -27,6 +27,7 @@
             android:layout_height="200dp"/>
 
         <com.example.customview.demo.verticaltextview.VerticalTextView
+            android:background="@color/cardview_dark_background"
             android:id="@+id/timeFileterTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

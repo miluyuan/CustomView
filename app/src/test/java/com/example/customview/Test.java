@@ -33,11 +33,38 @@ public class Test {
 
 //        doubleFormat();
 //        System.out.println(Integer.toBinaryString(3));
-        System.out.println(Math.toDegrees(0.663978750126234));
+//        System.out.println(Math.toDegrees(0.663978750126234));
+
+        long st = System.currentTimeMillis();
+        System.out.println("和：" + sum());
+        System.out.println(System.currentTimeMillis() - st);
+        System.out.println("===================");
+
+        long st2 = System.currentTimeMillis();
+        System.out.println("和：" + sum2());
+        System.out.println(System.currentTimeMillis() - st2);
     }
 
+    private static long sum() {
+        Long sum = 0L;
+        for (long i = 0; i <= Integer.MAX_VALUE; i++)
+            sum += i;
+        return sum;
+    }
 
-//https://blog.csdn.net/qq_36502826/article/details/86673906
+    private static long sum2() {
+        long sum = 0L;
+        for (long i = 0; i <= Integer.MAX_VALUE; i++)
+            sum += i;
+        return sum;
+    }
+
+    public static class Other {
+
+        public static String hello = "Hello";
+    }
+
+    //https://blog.csdn.net/qq_36502826/article/details/86673906
     //https://blog.csdn.net/bailu666666/article/details/79829902
     public static String double2Str(Double d) {
         if (d == null) {

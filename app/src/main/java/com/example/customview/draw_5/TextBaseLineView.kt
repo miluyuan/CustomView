@@ -23,8 +23,9 @@ class TextBaseLineView(context: Context):View(context) {
         paint.style = Paint.Style.FILL
         paint.isAntiAlias = true
         paint.textSize = 120f
+        //从文本的右端开始往左绘制
         paint.textAlign = Paint.Align.RIGHT
-        canvas?.drawText("lHello google!", 100f, 100f, paint)
+        canvas?.drawText("lHello google!", width/2f, 100f, paint)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
