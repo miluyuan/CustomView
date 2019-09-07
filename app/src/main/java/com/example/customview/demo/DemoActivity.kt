@@ -9,6 +9,7 @@ import com.example.customview.demo.iconview.IconViewActivity
 import com.example.customview.demo.landscapelinearlayout.LandscapeLinearLayoutActivity
 import com.example.customview.demo.pendulum.PendulumActivity
 import com.example.customview.demo.radar.RadarActivity
+import com.example.customview.demo.tabtextview.TabTextViewActivity
 import com.example.customview.demo.verticaltextview.VerticalTextViewActivity
 import kotlinx.android.synthetic.main.activity_demo.*
 
@@ -23,5 +24,6 @@ class DemoActivity : AppCompatActivity() {
         btn4.setOnClickListener { startActivity(Intent(this, VerticalTextViewActivity::class.java)) }
         btn5.setOnClickListener { startActivity(Intent(this, LandscapeLinearLayoutActivity::class.java)) }
         btn6.setOnClickListener { startActivity(Intent(this, IconViewActivity::class.java)) }
+        btn7.setOnClickListener { startActivity(Intent(this, TabTextViewActivity::class.java)) }
     }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,36 +11,42 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="雷达图"/>
+        android:text="雷达图" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="八卦图"/>
+        android:text="八卦图" />
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="单摆"/>
+        android:text="单摆" />
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="竖向TextView"/>
+        android:text="竖向TextView" />
 
     <Button
         android:id="@+id/btn5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LinearLayout横屏"/>
+        android:text="LinearLayout横屏" />
 
     <Button
         android:id="@+id/btn6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="模仿桌面图标"/>
+        android:text="模仿桌面图标" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="三角背景TextView" />
 
 </LinearLayout>

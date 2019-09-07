@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.customview">
+    package="com.example.customview">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -9,68 +11,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".demo.iconview.IconViewActivity">
-        </activity>
-        <activity android:name=".AnimateActivity">
-        </activity>
-        <activity android:name=".demo.landscapelinearlayout.LandscapeLinearLayoutActivity">
-        </activity>
-        <activity android:name=".demo.verticaltextview.VerticalTextViewActivity">
-        </activity>
-        <activity android:name=".animate_vpa.ViewPropertyAnimatorActivity">
-        </activity>
-        <activity android:name=".animate_10.AnimatorDemoActivity">
-        </activity>
-        <activity android:name=".animate_9.AnimatorSetActivity">
-        </activity>
-        <activity android:name=".demo.pendulum.PendulumActivity">
-        </activity>
-        <activity android:name=".animate_6.ValueAnimator1Activity">
-        </activity>
-        <activity android:name=".animate_8.PropertyValuesHolderActivity">
-        </activity>
-        <activity android:name=".animate_5_interpolator.CustomInterpolatorActivity">
-        </activity>
-        <activity android:name=".animate_2.XmlInterpolatorActivity">
-        </activity>
-        <activity android:name=".DrawActivity">
-        </activity>
-        <activity android:name=".animate_1.XmlAnimationActivity">
-        </activity>
-        <activity android:name=".demo.DemoActivity">
-        </activity>
-        <activity android:name=".demo.bagua.BaguaActivity">
-        </activity>
-        <activity android:name=".demo.radar.RadarActivity">
-        </activity>
-        <activity android:name=".layout_2.FlowLayoutActivity">
-        </activity>
-        <activity android:name=".draw_7.PaintMethodsActivity">
-        </activity>
-        <activity android:name=".draw_6.AdvancePathActivity">
-        </activity>
-        <activity android:name=".draw_5.DrawTextActivity">
-        </activity>
-        <activity android:name=".draw_4.CanvasOperateActivity">
-        </activity>
-        <activity android:name=".layout_1.MeasureLayoutActivity">
-        </activity>
-        <activity android:name=".draw_3.RegionActivity">
-        </activity>
-        <activity android:name=".draw_2.TextActivity">
-        </activity>
-        <activity android:name=".draw_2.PathActivity">
-        </activity>
+        <activity android:name=".demo.tabtextview.TabTextViewActivity"></activity>
+        <activity android:name=".demo.iconview.IconViewActivity"></activity>
+        <activity android:name=".AnimateActivity"></activity>
+        <activity android:name=".demo.landscapelinearlayout.LandscapeLinearLayoutActivity"></activity>
+        <activity android:name=".demo.verticaltextview.VerticalTextViewActivity"></activity>
+        <activity android:name=".animate_vpa.ViewPropertyAnimatorActivity"></activity>
+        <activity android:name=".animate_10.AnimatorDemoActivity"></activity>
+        <activity android:name=".animate_9.AnimatorSetActivity"></activity>
+        <activity android:name=".demo.pendulum.PendulumActivity"></activity>
+        <activity android:name=".animate_6.ValueAnimator1Activity"></activity>
+        <activity android:name=".animate_8.PropertyValuesHolderActivity"></activity>
+        <activity android:name=".animate_5_interpolator.CustomInterpolatorActivity"></activity>
+        <activity android:name=".animate_2.XmlInterpolatorActivity"></activity>
+        <activity android:name=".DrawActivity"></activity>
+        <activity android:name=".animate_1.XmlAnimationActivity"></activity>
+        <activity android:name=".demo.DemoActivity"></activity>
+        <activity android:name=".demo.bagua.BaguaActivity"></activity>
+        <activity android:name=".demo.radar.RadarActivity"></activity>
+        <activity android:name=".layout_2.FlowLayoutActivity"></activity>
+        <activity android:name=".draw_7.PaintMethodsActivity"></activity>
+        <activity android:name=".draw_6.AdvancePathActivity"></activity>
+        <activity android:name=".draw_5.DrawTextActivity"></activity>
+        <activity android:name=".draw_4.CanvasOperateActivity"></activity>
+        <activity android:name=".layout_1.MeasureLayoutActivity"></activity>
+        <activity android:name=".draw_3.RegionActivity"></activity>
+        <activity android:name=".draw_2.TextActivity"></activity>
+        <activity android:name=".draw_2.PathActivity"></activity>
         <activity
             android:name=".draw_1.Draw1Activity"
             android:label="@string/title_activity_draw1"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
