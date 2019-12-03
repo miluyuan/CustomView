@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.customview.layout_1.MyLinearLayout
+<com.example.customview.layout.layout_1.MyLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ff00ff"
-    tools:context=".layout_1.MeasureLayoutActivity">
+    tools:context=".layout.layout_1.MeasureLayoutActivity">
 
 
     <TextView
@@ -30,4 +30,4 @@
         android:background="#ffff00"
         android:text="第三个VIEW"/>
 
-</com.example.customview.layout_1.MyLinearLayout>
+</com.example.customview.layout.layout_1.MyLinearLayout>

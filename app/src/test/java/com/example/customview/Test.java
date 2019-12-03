@@ -3,6 +3,9 @@ package com.example.customview;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author wzw
@@ -34,15 +37,23 @@ public class Test {
 //        doubleFormat();
 //        System.out.println(Integer.toBinaryString(3));
 //        System.out.println(Math.toDegrees(0.663978750126234));
+//
+//        long st = System.currentTimeMillis();
+//        System.out.println("和：" + sum());
+//        System.out.println(System.currentTimeMillis() - st);
+//        System.out.println("===================");
+//
+//        long st2 = System.currentTimeMillis();
+//        System.out.println("和：" + sum2());
+//        System.out.println(System.currentTimeMillis() - st2);
 
-        long st = System.currentTimeMillis();
-        System.out.println("和：" + sum());
-        System.out.println(System.currentTimeMillis() - st);
-        System.out.println("===================");
+        LinkedList<Object> l = new LinkedList<>();
+        setA(l);
+    }
 
-        long st2 = System.currentTimeMillis();
-        System.out.println("和：" + sum2());
-        System.out.println(System.currentTimeMillis() - st2);
+    private static void setA(List<Object> list) {
+        ArrayList l = (ArrayList) list;
+        System.out.println(l);
     }
 
     private static long sum() {

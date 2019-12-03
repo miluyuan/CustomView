@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.customview.layout_2.FlowLayout
+<com.example.customview.layout.layout_2.FlowLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ff00ff"
-    tools:context=".layout_2.FlowLayoutActivity">
+    tools:context=".layout.layout_2.FlowLayoutActivity">
 
     <TextView
         style="@style/text_flag_01"
@@ -99,4 +99,4 @@
         android:textColor="#43BBE7"/>
 
 
-</com.example.customview.layout_2.FlowLayout>
+</com.example.customview.layout.layout_2.FlowLayout>

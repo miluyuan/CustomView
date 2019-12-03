@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".animate_1.XmlAnimationActivity">
+    tools:context=".animate.animate_1.XmlAnimationActivity">
 
-    <com.example.customview.layout_2.FlowLayout
+    <com.example.customview.layout.layout_2.FlowLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="set_animate"/>
 
-    </com.example.customview.layout_2.FlowLayout>
+    </com.example.customview.layout.layout_2.FlowLayout>
 
     <TextView
         android:id="@+id/tv"

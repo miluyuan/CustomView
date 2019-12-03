@@ -8,6 +8,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="10dp"
-    tools:context=".draw_2.PathActivity">
+    tools:context=".draw.draw_2.PathActivity">
 
 </LinearLayout>

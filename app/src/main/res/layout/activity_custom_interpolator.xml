@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".animate_5_interpolator.CustomInterpolatorActivity">
+    tools:context=".animate.animate_5_interpolator.CustomInterpolatorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

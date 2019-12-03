@@ -9,9 +9,11 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.telephony.TelephonyManager
+import com.example.customview.animate.AnimateActivity
 import com.example.customview.demo.DemoActivity
-import com.example.customview.layout_1.MeasureLayoutActivity
-import com.example.customview.layout_2.FlowLayoutActivity
+import com.example.customview.draw.DrawActivity
+import com.example.customview.layout.layout_1.MeasureLayoutActivity
+import com.example.customview.layout.layout_2.FlowLayoutActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

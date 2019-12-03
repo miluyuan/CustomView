@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".draw_5.DrawTextActivity">
+    tools:context=".draw.draw_5.DrawTextActivity">
 
     <ImageView
         android:layout_width="wrap_content"

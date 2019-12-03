@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".animate_10.AnimatorDemoActivity">
+    tools:context=".animate.animate_10.AnimatorDemoActivity">
 
     <Button
         android:id="@+id/btnStart"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".animate_2.XmlInterpolatorActivity">
+    tools:context=".animate.animate_2.XmlInterpolatorActivity">
 
     <Button
         android:id="@+id/btn1"

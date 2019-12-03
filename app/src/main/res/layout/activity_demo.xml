@@ -49,4 +49,15 @@
         android:layout_height="wrap_content"
         android:text="三角背景TextView" />
 
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CoordinatorLayout测试" />
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="可移动控件" />
+
 </LinearLayout>

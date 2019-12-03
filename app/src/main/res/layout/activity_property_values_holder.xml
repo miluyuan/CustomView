@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".animate_8.PropertyValuesHolderActivity">
+    tools:context=".animate.animate_8.PropertyValuesHolderActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.customview.animate_6.MyTextView
+        <com.example.customview.animate.animate_6.MyTextView
             android:id="@+id/tv"
             android:layout_width="48dp"
             android:background="@color/colorAccent"
